@@ -17,19 +17,22 @@ DROP TABLE IF EXISTS contacts;
 
 CREATE TABLE IF NOT EXISTS category (
     category_id TEXT PRIMARY KEY NOT NULL,
-    category TEXT NOT NULL
+    category TEXT NOT NULL,
+	last_updated TIMESTAMP DEFAULT LOCALTIMESTAMP NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS subcategory (
     subcategory_id TEXT PRIMARY KEY NOT NULL,
-    subcategory TEXT NOT NULL
+    subcategory TEXT NOT NULL,
+	last_updated TIMESTAMP DEFAULT LOCALTIMESTAMP NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS contacts (
     contact_id INT PRIMARY KEY NOT NULL,
     first_name TEXT NOT NULL,
     last_name TEXT NOT NULL,
-    email TEXT UNIQUE NOT NULL
+    email TEXT UNIQUE NOT NULL,
+	last_updated TIMESTAMP DEFAULT LOCALTIMESTAMP NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS campaign (
@@ -49,5 +52,6 @@ CREATE TABLE IF NOT EXISTS campaign (
     subcategory_id TEXT NOT NULL,
 	FOREIGN KEY (contact_id) REFERENCES contacts(contact_id),
 	FOREIGN KEY (category_id) REFERENCES category(category_id),
-	FOREIGN KEY (subcategory_id) REFERENCES subcategory(subcategory_id)
+	FOREIGN KEY (subcategory_id) REFERENCES subcategory(subcategory_id),
+	last_updated TIMESTAMP DEFAULT LOCALTIMESTAMP NOT NULL
 );
