@@ -3,7 +3,9 @@
 pgAdmin4 Steps
 - Create the database: MSUDA-project-ETL-crowdfunding
 - Create the tables: Open and run part2.3-schema.sql (this file)
-- Import the data: Right click each table, in the order of creation, and import from resources/output (make sure Header is selected in Options)
+- Import the data: Right click each table, in the order of creation, and import from resources/output/csv-files
+	- Make sure Options>Header is selected
+	- Make sure Columns>last_updated is removed
 
 ERROR IMPORTING THE DATA?
 Check which table is empty, you need to fill that one first
@@ -50,8 +52,8 @@ CREATE TABLE IF NOT EXISTS campaign (
     end_date TIMESTAMP NOT NULL,
     category_id TEXT NOT NULL,
     subcategory_id TEXT NOT NULL,
+	last_updated TIMESTAMP DEFAULT LOCALTIMESTAMP NOT NULL,
 	FOREIGN KEY (contact_id) REFERENCES contacts(contact_id),
 	FOREIGN KEY (category_id) REFERENCES category(category_id),
-	FOREIGN KEY (subcategory_id) REFERENCES subcategory(subcategory_id),
-	last_updated TIMESTAMP DEFAULT LOCALTIMESTAMP NOT NULL
+	FOREIGN KEY (subcategory_id) REFERENCES subcategory(subcategory_id)
 );
