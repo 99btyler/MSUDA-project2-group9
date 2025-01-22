@@ -12,7 +12,7 @@ We create an ERD. Then, in pgAdmin4, we create a database and tables of imported
 ### Part 3: Analysis
 First, we query the database. Then, using SQLAlchemy, we create visualizations by doing an exploratory data analysis (EDA)
 * [Queries](submission/part3.1_queries.sql)
-* [EDA](submission/part3.2_EDA.ipynb) which comes with INSERT_FIGS_HERE
+* [EDA](submission/part3.2_EDA.ipynb) which comes with [figs](submission/resources/output/figs)
 ### Part 4: Writeup
 We summarize our purpose, process, and results
 * [Writeup](submission/part4.1_writeup.pdf)
