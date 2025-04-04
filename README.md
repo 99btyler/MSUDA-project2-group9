@@ -1,5 +1,5 @@
-# ETL-crowdfunding
-MSU Data Analytics Project 2
+# MSUDA-project2-group9
+MSU Data Analytics Project 2, Group 9
 
 # Executive Summary
 ### Part 1: Extract and Transform
